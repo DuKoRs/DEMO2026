@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 # ⚙️ КОНФИГУРАЦИЯ
 # =============================================================================
 
-# Домен
+# Домен (оставлен для проверок конфигурации внутри ВМ)
 DOMAIN="au-team.irpo"
 
 # Учетные данные
@@ -27,14 +27,14 @@ NETADMIN_PASS='P@ssw0rd'
 PORT_ROOT=22
 PORT_SECURE=2026
 
-# Хосты (укажите реальные IP, если DNS не настроен)
+# 🔥 Хосты с реальными IP-адресами (вместо DNS-имён)
 declare -A HOSTS=(
-    ["ISP"]="isp.au-team.irpo"
-    ["HQ-RTR"]="hq-rtr.au-team.irpo"
-    ["BR-RTR"]="br-rtr.au-team.irpo"
-    ["HQ-SRV"]="hq-srv.au-team.irpo"
-    ["BR-SRV"]="br-srv.au-team.irpo"
-    ["HQ-CLI"]="hq-cli.au-team.irpo"
+    ["ISP"]="172.16.1.1"           # Шлюз для офисов
+    ["HQ-RTR"]="172.16.1.2"        # Основной интерфейс HQ-RTR
+    ["BR-RTR"]="172.16.2.2"        # Основной интерфейс BR-RTR
+    ["HQ-SRV"]="192.168.100.2"     # Сервер HQ (VLAN 100)
+    ["BR-SRV"]="192.168.0.2"       # Сервер BR
+    ["HQ-CLI"]="192.168.200.2"     # Клиент HQ (VLAN 200)
 )
 
 # Типы устройств (linux/ecorouter)
